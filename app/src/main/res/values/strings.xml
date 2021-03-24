@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">EmergeV3</string>
+    <string name="app_name">Emerge</string>
+    <string name="get_started">Get Started</string>
+    <string name="title">TITLE</string>
+    <string name="des">Description</string>
 </resources>
