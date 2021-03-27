@@ -3,4 +3,6 @@
     <string name="get_started">Get Started</string>
     <string name="title">TITLE</string>
     <string name="des">Description</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
