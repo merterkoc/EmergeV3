@@ -3,7 +3,11 @@ package com.example.emergev3;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -11,17 +15,35 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class ActivityHome extends FragmentActivity implements OnMapReadyCallback {
-GoogleMap map;
+    GoogleMap map;
+    Button logoutBtn;
+    FirebaseAuth firebaseAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        SupportMapFragment mapFragment  = (SupportMapFragment) getSupportFragmentManager()
+        firebaseAuth = FirebaseAuth.getInstance();
+
+        logoutBtn = findViewById(R.id.logout);
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.maps);
         mapFragment.getMapAsync(this);
+        logoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Toast.makeText(ActivityHome.this, "Çıkış yapıldı!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(ActivityHome.this,LoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
+
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -32,4 +54,5 @@ GoogleMap map;
         googleMap.setMaxZoomPreference(16.0f);*/
 
     }
+
 }

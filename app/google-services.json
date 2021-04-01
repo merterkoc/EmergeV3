@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "195036364085",
+    "project_id": "emerge-d43ae",
+    "storage_bucket": "emerge-d43ae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:195036364085:android:2e966b31c08a1b2d16e07c",
+        "android_client_info": {
+          "package_name": "com.example.emergev3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "195036364085-lmbi2i2bnovjt6eu2rbc0juanh7taugl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8BQqQMVI3TGkM1J3SauYBrKh1UmBYSHU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "195036364085-lmbi2i2bnovjt6eu2rbc0juanh7taugl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

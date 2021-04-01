@@ -13,8 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EmergeV3">
+        <activity android:name=".ActivityRegister"></activity>
         <activity android:name=".MembershipActivity">
-            <!--4-->
+
+            <!-- 4 -->
 
         </activity>
 
@@ -23,26 +25,30 @@
             android:value="@string/map_key" />
 
         <activity android:name=".ActivityProfile">
-            <!--3-->
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
+            <!-- 3 -->
 
         </activity>
         <activity android:name=".ActivityHome">
-            <!--3-->
+
+            <!-- 3 -->
 
         </activity>
         <activity
             android:name=".LoginActivity"
             android:theme="@style/Theme.EmergeV3.Login">
-            <!--2-->
+
+            <!-- 2 -->
 
         </activity>
         <activity android:name=".MainActivity">
-        <!--1-->
 
+            <!-- 1 -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
