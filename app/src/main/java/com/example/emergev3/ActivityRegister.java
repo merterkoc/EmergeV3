@@ -39,16 +39,18 @@ public class ActivityRegister extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         init();
+        //Kullanıcı giriş yapmış mı?
         if (fAuth.getCurrentUser() != null) {
 
             Intent intent = new Intent(ActivityRegister.this, MainActivity.class);
             startActivity(intent);
             finish();
         }
+        //Kullanıcı giriş yapmış mı?
         mRegisterBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = mEmail.getText().toString().trim();
+                String email = mEmail.getText().toString().trim(); //E mail'in textini alma
                 String password = mPassword.getText().toString().trim();
                 if (TextUtils.isEmpty(email)) {
                     mEmail.setError("Email Boş!");
@@ -68,6 +70,7 @@ public class ActivityRegister extends AppCompatActivity {
                     mPassword.setError("Parola 6 karakterden küçük!");
                     return;
                 }
+                //Kullanıcı oluşturma
                 fAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -87,11 +90,13 @@ public class ActivityRegister extends AppCompatActivity {
                             Toast.makeText(ActivityRegister.this, "Kullanıcı Oluşturuldu!", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(ActivityRegister.this, ActivityHome.class);
                             startActivity(intent);
+                            finish();
                         } else {
                             Toast.makeText(ActivityRegister.this, "Error! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
+                //Kullanıcı oluşturma
             }
         });
 

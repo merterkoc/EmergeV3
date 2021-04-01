@@ -22,11 +22,12 @@
             android:layout_height="match_parent"
             android:layout_weight="2"
             android:orientation="vertical">
+
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_back"
-                android:padding="40dp"/>
+                android:padding="40dp"
+                android:src="@drawable/ic_back" />
 
 
         </LinearLayout>
@@ -38,15 +39,16 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:orientation="vertical">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/color_1"
-                android:text="Login"
                 android:fontFamily="@font/roboto_thin"
-                android:textSize="54sp"
+                android:paddingRight="14dp"
+                android:text="Login"
                 android:textAlignment="textEnd"
-                android:paddingRight="14dp"/>
+                android:textColor="@color/color_1"
+                android:textSize="54sp" />
         </LinearLayout>
     </LinearLayout>
 
@@ -55,49 +57,52 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:orientation="vertical"
         android:gravity="center"
+        android:orientation="vertical"
         android:paddingLeft="20dp"
         android:paddingRight="20dp">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="MAIL"
-                android:textColor="@color/color_1"
-                android:textSize="20sp"/>
 
-            <EditText
-                android:id="@+id/logMail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_thin"
-                android:hint="Your mail"
-                android:textColorHint="#828899"
-                android:textSize="20sp"
-                android:backgroundTint="@color/color_1"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Password"
-                android:textColor="@color/color_1"
-                android:textSize="20sp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MAIL"
+            android:textColor="@color/color_1"
+            android:textSize="20sp" />
 
-            <EditText
-                android:id="@+id/logPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_thin"
-                android:hint="Your password here"
-                android:textColorHint="#828899"
-                android:textSize="20sp"
-                android:backgroundTint="@color/color_1"/>
+        <EditText
+            android:id="@+id/logMail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/color_1"
+            android:fontFamily="@font/roboto_thin"
+            android:hint="Your mail"
+            android:textColorHint="#828899"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:textColor="@color/color_1"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/logPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/color_1"
+            android:fontFamily="@font/roboto_thin"
+            android:hint="Your password here"
+            android:textColorHint="#828899"
+            android:textSize="20sp" />
+
         <TextView
             android:id="@+id/forgotPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
             android:text="Forgot password?"
-            android:textAlignment="textEnd"/>
+            android:textAlignment="textEnd"
+            android:textSize="20sp" />
 
     </LinearLayout>
 
@@ -107,38 +112,42 @@
         android:layout_height="match_parent"
         android:layout_weight="1.1"
         android:orientation="vertical">
+
         <Button
             android:id="@+id/logBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="Login"
             android:layout_gravity="center"
-            android:background="@drawable/button"/>
+            android:background="@drawable/button"
+            android:text="Login"
+            android:textAlignment="center" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="OR"
             android:layout_marginTop="16dp"
+            android:text="OR"
             android:textColor="@color/color_4"
-            android:textSize="20sp"/>
+            android:textSize="20sp" />
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/google_icon"
             android:layout_gravity="center"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginTop="16dp"
+            android:src="@drawable/google_icon" />
+
         <TextView
             android:id="@+id/signupTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:onClick="signup"
             android:paddingTop="20dp"
             android:text="Signup"
-            android:textColor="@color/color_3"
             android:textAlignment="center"
-            android:onClick="signup"/>
+            android:textColor="@color/color_3"
+            android:textSize="20sp" />
 
     </LinearLayout>
 </LinearLayout>

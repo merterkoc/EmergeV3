@@ -64,6 +64,7 @@ public class LoginActivity extends AppCompatActivity {
                     mPassword.setError("Parola 6 karakterden küçük!");
                     return;
                 }
+                //E mail ve parola ile giriş yapma
                 fAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -84,6 +85,7 @@ public class LoginActivity extends AppCompatActivity {
                     }
 
                 });
+                //E mail ve parola ile giriş yapma
             }
         });
 
@@ -127,7 +129,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-
+    //Üye ol butonu
     public void signup(View view) {
         Intent intent = new Intent(LoginActivity.this,ActivityRegister.class);
         startActivity(intent);
