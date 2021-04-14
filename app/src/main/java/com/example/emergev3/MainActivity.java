@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences preferences = getSharedPreferences("PREFERENCE",MODE_PRIVATE);
         String FirstTime = preferences.getString("FirstTimeInstall","");
         if(FirstTime.equals("Yes")){
-            Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+            Intent intent = new Intent(MainActivity.this, ActivityLogin.class);
             startActivity(intent);
             finish();
         }
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+                Intent intent = new Intent(MainActivity.this, ActivityLogin.class);
                 startActivity(intent);
                 finish();
             }
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         firebaseAuth= FirebaseAuth.getInstance();
         if(firebaseAuth.getCurrentUser()!= null){
-            Intent intent = new Intent(MainActivity.this, ActivityHome.class);
+            Intent intent = new Intent(MainActivity.this, ConnectActivity.class);//geçici olarak connect activityde sonrasında activity home'a gidilecek
             startActivity(intent);
             finish();
         }

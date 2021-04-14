@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:theme="@style/Theme.EmergeV3"
     tools:context=".ActivityHome">
-<Button
-    android:id="@+id/logout"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Logout"
-    android:layout_gravity="center"
-    android:backgroundTint="@color/color_3"
-    android:textColor="@color/white"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -25,23 +17,42 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"></LinearLayout>
-
+        <FrameLayout
+            android:id="@+id/map_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:layout_weight="0.1"
-
             android:orientation="vertical">
 
+            <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
             <fragment
+                android:layout_margin="2dp"
                 android:id="@+id/maps"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:name="com.google.android.gms.maps.SupportMapFragment"/>
+                android:background="@drawable/shap_map"
+                android:orientation="vertical">
+            </LinearLayout>
+            </FrameLayout>
 
         </LinearLayout>
+        </FrameLayout>
     </LinearLayout>
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -49,21 +60,22 @@
         android:layout_weight="1"
         android:orientation="vertical">
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_width="250dp"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:background="@drawable/layout_border"
-            android:layout_weight="1"
             android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="2.1"
+                android:layout_weight="0.8"
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="50dp"
+                    android:layout_gravity="center"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:orientation="vertical">
@@ -86,6 +98,7 @@
                         android:layout_height="match_parent"
                         android:paddingTop="2dp"
                         android:text="Meagan"
+                        android:textSize="10dp"
                         android:textAlignment="center"
                         android:textColor="#3060A3" />
                 </LinearLayout>
@@ -94,127 +107,48 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_height="80dp"
+                android:layout_weight="0.5"
                 android:orientation="vertical">
 
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="2"
+                    android:layout_weight="1.2"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="TITLE"
+                        android:paddingLeft="5dp"
+                        android:layout_gravity="bottom"
+                        android:textColor="#3060A3"
+                        android:textSize="14dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
                     android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="130dp"
+                        android:layout_height="3dp"
+                        android:paddingLeft="4dp"
+                        android:src="@drawable/line" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
                         android:paddingTop="5dp"
-                        android:text="TITLE"
-                        android:textColor="#3060A3"
-                        android:textSize="22dp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="130dp"
-                        android:layout_height="3dp"
-                        android:paddingLeft="4dp"
-                        android:src="@drawable/line" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:paddingLeft="5dp"
-                        android:paddingTop="5dp"
                         android:text="Description"
                         android:textColor="#636363"
-                        android:textSize="16dp" />
+                        android:textSize="10dp" />
                 </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="2.5"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"></LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:textAlignment="center"
-                        android:text="2KM"
-                        android:textColor="#3060A3"
-                        android:paddingTop="7dp"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"></LinearLayout>
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:background="@drawable/layout_border">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="2.1"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="4dp"
-                        android:src="@drawable/avatar" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2.5"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:paddingTop="2dp"
-                        android:text="Meagan"
-                        android:textAlignment="center"
-                        android:textColor="#3060A3" />
-                </LinearLayout>
-
             </LinearLayout>
 
             <LinearLayout
@@ -223,52 +157,6 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:paddingLeft="5dp"
-                        android:paddingTop="5dp"
-                        android:text="TITLE"
-                        android:textColor="#3060A3"
-                        android:textSize="22dp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="130dp"
-                        android:layout_height="3dp"
-                        android:paddingLeft="4dp"
-                        android:src="@drawable/line" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:paddingLeft="5dp"
-                        android:paddingTop="5dp"
-                        android:text="Description"
-                        android:textColor="#636363"
-                        android:textSize="16dp" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="2.5"
-                android:orientation="vertical">
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -285,6 +173,7 @@
                         android:layout_height="match_parent"
                         android:textAlignment="center"
                         android:text="2KM"
+                        android:textSize="10dp"
                         android:textColor="#3060A3"
                         android:paddingTop="7dp"/>
                 </LinearLayout>
@@ -299,21 +188,22 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_width="250dp"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
-            android:layout_weight="1"
             android:background="@drawable/layout_border"
             android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="2.1"
+                android:layout_weight="0.8"
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="50dp"
+                    android:layout_gravity="center"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:orientation="vertical">
@@ -336,6 +226,7 @@
                         android:layout_height="match_parent"
                         android:paddingTop="2dp"
                         android:text="Meagan"
+                        android:textSize="10dp"
                         android:textAlignment="center"
                         android:textColor="#3060A3" />
                 </LinearLayout>
@@ -344,25 +235,25 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_height="80dp"
+                android:layout_weight="0.5"
                 android:orientation="vertical">
 
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:orientation="vertical">
+                    android:layout_weight="1.2"
+                    android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:paddingLeft="5dp"
-                        android:paddingTop="5dp"
+                        android:layout_height="wrap_content"
                         android:text="TITLE"
+                        android:paddingLeft="5dp"
+                        android:layout_gravity="bottom"
                         android:textColor="#3060A3"
-                        android:textSize="22dp" />
+                        android:textSize="14dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -379,19 +270,19 @@
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
                         android:paddingTop="5dp"
                         android:text="Description"
                         android:textColor="#636363"
-                        android:textSize="16dp" />
+                        android:textSize="10dp" />
                 </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="2.5"
+                android:layout_weight="1"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -410,6 +301,7 @@
                         android:layout_height="match_parent"
                         android:textAlignment="center"
                         android:text="2KM"
+                        android:textSize="10dp"
                         android:textColor="#3060A3"
                         android:paddingTop="7dp"/>
                 </LinearLayout>
@@ -418,10 +310,139 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="vertical"/>
+                    android:orientation="vertical"></LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:background="@drawable/layout_border"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.8"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="50dp"
+                    android:layout_gravity="center"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="4dp"
+                        android:src="@drawable/avatar" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingTop="2dp"
+                        android:text="Meagan"
+                        android:textSize="10dp"
+                        android:textAlignment="center"
+                        android:textColor="#3060A3" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_weight="0.5"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.2"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="TITLE"
+                        android:paddingLeft="5dp"
+                        android:layout_gravity="bottom"
+                        android:textColor="#3060A3"
+                        android:textSize="14dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="130dp"
+                        android:layout_height="3dp"
+                        android:paddingLeft="4dp"
+                        android:src="@drawable/line" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="5dp"
+                        android:text="Description"
+                        android:textColor="#636363"
+                        android:textSize="10dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"></LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textAlignment="center"
+                        android:text="2KM"
+                        android:textSize="10dp"
+                        android:textColor="#3060A3"
+                        android:paddingTop="7dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"></LinearLayout>
             </LinearLayout>
 
         </LinearLayout>
 
     </LinearLayout>
+</androidx.core.widget.NestedScrollView>
 </LinearLayout>

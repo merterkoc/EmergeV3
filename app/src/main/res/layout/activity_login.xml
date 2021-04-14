@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:theme="@style/Theme.EmergeV3.Login"
-    tools:context=".LoginActivity">
+    tools:context=".ActivityLogin">
 
     <LinearLayout
         android:id="@+id/loginLayoutHead"
@@ -90,6 +90,7 @@
             android:id="@+id/logPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textPassword"
             android:backgroundTint="@color/color_1"
             android:fontFamily="@font/roboto_thin"
             android:hint="Your password here"

@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -22,9 +21,8 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
-public class LoginActivity extends AppCompatActivity {
+public class ActivityLogin extends AppCompatActivity {
 
     private FirebaseAuth fAuth;
     EditText mEmail, mPassword;
@@ -42,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         //Kullancıı giriş yapmış mı?
 //        if(fAuth.getCurrentUser()!= null){
-//            Intent intent = new Intent(LoginActivity.this, ActivityHome.class);
+//            Intent intent = new Intent(ActivityLogin.this, ActivityHome.class);
 //            startActivity(intent);
 //            finish();
 //        }
@@ -73,14 +71,14 @@ public class LoginActivity extends AppCompatActivity {
                             String userId=fAuth.getCurrentUser().getUid();
                             Log.d(""+userId+"", "Giriş Yapıldı:success");
 
-                            Toast.makeText(LoginActivity.this, "Giriş Yapıldı!" + userId, Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(LoginActivity.this, ActivityHome.class);
+                            Toast.makeText(ActivityLogin.this, "Giriş Yapıldı!", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(ActivityLogin.this, ConnectActivity.class);
                             startActivity(intent);
                             finish();
                         }
                         else{
                             Log.d("Hata! ", "createUserWithEmail:Notsuccess");
-                            Toast.makeText(LoginActivity.this, "Hatalı mail adresi veya parola! "+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ActivityLogin.this, "Hatalı mail adresi veya parola! "+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
 
@@ -106,12 +104,12 @@ public class LoginActivity extends AppCompatActivity {
                             fAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
-                                    Toast.makeText(LoginActivity.this, "Sıfırlama linkiniz mail adersinize gönderildi ", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(ActivityLogin.this, "Sıfırlama linkiniz mail adersinize gönderildi ", Toast.LENGTH_SHORT).show();
                                 }
                             }).addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
-                                    Toast.makeText(LoginActivity.this, "Gönderilemedi " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(ActivityLogin.this, "Gönderilemedi " + e.getMessage(), Toast.LENGTH_SHORT).show();
                                 }
                             });
                         }
@@ -131,7 +129,9 @@ public class LoginActivity extends AppCompatActivity {
     }
     //Üye ol butonu
     public void signup(View view) {
-        Intent intent = new Intent(LoginActivity.this,ActivityRegister.class);
+        Intent intent = new Intent(ActivityLogin.this,ActivityRegister.class);
         startActivity(intent);
+        finish();
     }
+
 }
