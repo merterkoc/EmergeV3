@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:theme="@style/Theme.EmergeV3.Login"
-    tools:context=".LoginActivity">
+    tools:context=".ActivityRegister">
 
     <LinearLayout
         android:id="@+id/loginLayoutHead"
@@ -21,16 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="40dp"
-                android:src="@drawable/ic_back" />
-
-
-        </LinearLayout>
+            android:orientation="vertical"/>
 
         <LinearLayout
             android:id="@+id/loginLayoutHeadEnd"
@@ -67,7 +58,7 @@
             android:layout_height="wrap_content"
             android:text="Name"
             android:textColor="@color/color_1"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <EditText
             android:id="@+id/regName"
@@ -77,14 +68,14 @@
             android:fontFamily="@font/roboto_thin"
             android:hint="Your name"
             android:textColorHint="#828899"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="E-Mail"
             android:textColor="@color/color_1"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <EditText
             android:id="@+id/regMail"
@@ -94,14 +85,32 @@
             android:fontFamily="@font/roboto_thin"
             android:hint="Your mail"
             android:textColorHint="#828899"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phone"
+            android:textColor="@color/color_1"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/phoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/color_1"
+            android:fontFamily="@font/roboto_thin"
+            android:hint="Your phone"
+            android:inputType="phone"
+            android:textColorHint="#828899"
+            android:textSize="14sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Password"
             android:textColor="@color/color_1"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <EditText
             android:id="@+id/regPassword"
@@ -110,15 +119,16 @@
             android:backgroundTint="@color/color_1"
             android:fontFamily="@font/roboto_thin"
             android:hint="Your password"
+            android:inputType="textPassword"
             android:textColorHint="#828899"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Password Again"
             android:textColor="@color/color_1"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <EditText
             android:id="@+id/regAgainPassword"
@@ -127,8 +137,9 @@
             android:backgroundTint="@color/color_1"
             android:fontFamily="@font/roboto_thin"
             android:hint="Your password"
+            android:inputType="textPassword"
             android:textColorHint="#828899"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/regLogin"
@@ -136,7 +147,8 @@
             android:layout_height="wrap_content"
             android:text="Do you have an account?"
             android:textAlignment="textEnd"
-            android:textSize="20sp" />
+            android:textSize="18sp"
+            android:onClick="sigIn"/>
 
 
     </LinearLayout>
@@ -151,10 +163,11 @@
         <Button
             android:id="@+id/registerBtn"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_gravity="center"
             android:background="@drawable/button"
             android:text="Register"
+            android:textSize="12sp"
             android:textAlignment="center" />
 
         <TextView
@@ -166,12 +179,12 @@
             android:textColor="@color/color_4"
             android:textSize="20sp" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/google_icon" />
+       <Button
+           android:id="@+id/regGoogleBtn"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center"
+           android:text="Google hesabıyla giriş"/>
 
     </LinearLayout>
 </LinearLayout>

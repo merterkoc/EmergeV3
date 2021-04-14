@@ -13,12 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EmergeV3">
-        <activity android:name=".ActivityRegister"></activity>
-        <activity android:name=".MembershipActivity">
-
-            <!-- 4 -->
-
+        <activity android:name=".ConnectActivity"></activity>
+        <activity android:name=".ActivityApp">
         </activity>
+        <activity android:name=".ActivityRegister" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -26,23 +24,25 @@
 
         <activity android:name=".ActivityProfile">
 
-            <!-- 3 -->
-
-        </activity>
-        <activity android:name=".ActivityHome">
 
             <!-- 3 -->
 
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".ActivityHome"
+            android:theme="@style/Theme.Home">
+
+            <!-- 3 -->
+
+        </activity>
+        <activity
+            android:name=".ActivityLogin"
             android:theme="@style/Theme.EmergeV3.Login">
 
             <!-- 2 -->
 
         </activity>
         <activity android:name=".MainActivity">
-
             <!-- 1 -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
